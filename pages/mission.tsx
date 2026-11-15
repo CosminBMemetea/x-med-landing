@@ -1,7 +1,8 @@
+import { basePath } from '@/lib/basePath';
 import React from 'react';
 import styles from '../app/page.module.css'
 
-import { Inter } from '@next/font/google'
+import { Inter } from 'next/font/google'
 import '../app/globals.css'
 import Head from 'next/head';
 const inter = Inter({ subsets: ['latin'] })
@@ -13,7 +14,7 @@ const Mission = () => {
         <title>Mission ➤ x-edeum</title>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta name="description" content="Motivated people together." />
-        <link rel="icon" href="/logo_vector-file.svg" />
+        <link rel="icon" href={`${basePath}/logo_vector-file.svg`} />
       </Head>
       <div className={styles.description}>
         <p>
@@ -21,9 +22,7 @@ const Mission = () => {
         </p>
         <div>
           <a
-            href="/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`${basePath}/`}
           >
            Together we build a better future.
           </a>
@@ -35,36 +34,27 @@ const Mission = () => {
 
  <div className={styles.grid}>
 
-        <a
-          href=""
+        <div
           className={styles.card}
-        //   target="_blank"
-        //   rel="noopener noreferrer"
         >
           <h2 className={inter.className}>
            Improve Patient Experience Reduce Waitings Times<span>-&gt;</span>
           </h2>
           <p className={inter.className}>Empower patients by providing them with a seamless and stress-free hospital experience. By reducing the time patients spend navigating the hospital, we aim to create an environment that is supportive and welcoming, with a focus on patient comfort and satisfaction.</p>
-        </a>
+        </div>
 
-        <a
-          href=""
+        <div
           className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <h2 className={inter.className}>
            Increase hospital Reputation and Efficiency<span>-&gt;</span>
           </h2>
           <p className={inter.className}>
           Revolutionize the healthcare industry by improving hospital efficiency and patient outcomes. Our goal is to create a world where hospitals run smoothly and efficiently, with patients receiving the care they need as quickly and easily as possible. By providing real-time navigation assistance, we aim to reduce wait times and streamline the hospital experience.</p>
-        </a>
+        </div>
 
-        <a
-          href=""
+        <div
           className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <h2 className={inter.className}>
             Ensuring Trust and Security in Healthcare<span>-&gt;</span>
@@ -72,16 +62,14 @@ const Mission = () => {
           <p className={inter.className}>
            To build a more secure and trustworthy healthcare ecosystem. We believe that every patient has the right to privacy and that their personal data must be protected. By implementing robust data security measures, we aim to build trust with patients and healthcare providers, and create a more secure and transparent healthcare system for all.
           </p>
-        </a>
+        </div>
       </div>
 
        <div className={styles.grid}>
 
         <a
-          href="/mission"
+          href={`${basePath}/mission/`}
           className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <h2 className={inter.className}>
            MISSION  <span>-&gt;</span>
@@ -90,10 +78,8 @@ const Mission = () => {
         </a>
 
         <a
-          href="/partners"
+          href={`${basePath}/partners/`}
           className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <h2 className={inter.className}>
             PARTNERS <span>-&gt;</span>
@@ -104,10 +90,8 @@ const Mission = () => {
         </a>
 
         <a
-          href="/roadmap"
+          href={`${basePath}/roadmap/`}
           className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <h2 className={inter.className}>
             ROADMAP <span>-&gt;</span>

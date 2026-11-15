@@ -1,5 +1,6 @@
+import { basePath } from '@/lib/basePath';
 import Image from 'next/image'
-import { Inter } from '@next/font/google'
+import { Inter } from 'next/font/google'
 import styles from './page.module.css'
 const inter = Inter({ subsets: ['latin'] })
 
@@ -8,19 +9,13 @@ const inter = Inter({ subsets: ['latin'] })
   return (
     
     <main className={styles.main}>
-        <title>Home ➤ x-edeum</title>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <meta name="description" content="Motivated people together." />
-        <link rel="icon" href="/logo_vector-file.svg" />
  
       <div className={styles.description}>
         <p> Revolutionize healthcare with effortless medical system navigation and care.
         </p>
         <div>
           <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`${basePath}/core/`}
           >
             By XΞDΞUM
           </a>
@@ -32,12 +27,10 @@ const inter = Inter({ subsets: ['latin'] })
                   <span className={styles.catInfo}> XΞDΞUM CORΞ </span>
                   <div className={styles.media}> 
                   <a
-                    href="/core"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={`${basePath}/core/`}
                   >
                       <Image className={styles.img}
-                       src={`/imgs/ad.gif`} 
+                       src={`${basePath}/imgs/ad.gif`} 
                        width={350}
                        height={350}
                        alt=""
@@ -51,10 +44,8 @@ const inter = Inter({ subsets: ['latin'] })
       <div className={styles.grid}>
 
         <a
-          href="/mission"
+          href={`${basePath}/mission/`}
           className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <h2 className={inter.className}>
            MISSION  <span>-&gt;</span>
@@ -63,10 +54,8 @@ const inter = Inter({ subsets: ['latin'] })
         </a>
 
         <a
-          href="/partners"
+          href={`${basePath}/partners/`}
           className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <h2 className={inter.className}>
             PARTNERS <span>-&gt;</span>
@@ -77,10 +66,8 @@ const inter = Inter({ subsets: ['latin'] })
         </a>
 
         <a
-          href="/roadmap"
+          href={`${basePath}/roadmap/`}
           className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <h2 className={inter.className}>
             ROADMAP <span>-&gt;</span>

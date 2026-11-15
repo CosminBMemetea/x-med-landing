@@ -15,7 +15,7 @@ export interface TimelineItemProps {
   text: string,
   time: string,
   category: Category,
-  link: Link
+  link?: Link
 }
 
 const TimelineItem = (data: TimelineItemProps) => (
@@ -24,13 +24,8 @@ const TimelineItem = (data: TimelineItemProps) => (
       <span className={styles['tag']} style={{ background: data.category.color }}>
         {data.category.tag}
       </span>
-      <time>{data.time}</time>
+      <time className={styles['time']}>{data.time}</time>
       <p>{data.text}</p>
-      {data.link &&
-      (<a 
-        target="_blank" rel="noreferrer">
-        {data.link.text}</a>)
-      }
       <span className={styles['circle']}></span>
     </div>
   </div>
