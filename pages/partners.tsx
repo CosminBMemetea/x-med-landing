@@ -1,7 +1,8 @@
+import { basePath } from '@/lib/basePath';
 import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import styles from '../app/page.module.css'
-import { Inter } from '@next/font/google'
+import { Inter } from 'next/font/google'
 import '../app/globals.css'
 import Head from 'next/head';
 const inter = Inter({ subsets: ['latin'] })
@@ -13,7 +14,7 @@ const Partners = () => {
         <title>Partners ➤ x-edeum</title>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta name="description" content="Motivated people together." />
-        <link rel="icon" href="/logo_vector-file.svg" />
+        <link rel="icon" href={`${basePath}/logo_vector-file.svg`} />
       </Head>
       <div className={styles.description}>
         <p>
@@ -21,9 +22,7 @@ const Partners = () => {
         </p>
         <div>
           <a
-            href="/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`${basePath}/`}
           >
            Together we build a better future.
           </a>
@@ -34,10 +33,8 @@ const Partners = () => {
        <div className={styles.grid}>
 
         <a
-          href="/mission"
+          href={`${basePath}/mission/`}
           className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <h2 className={inter.className}>
            MISSION  <span>-&gt;</span>
@@ -46,10 +43,8 @@ const Partners = () => {
         </a>
 
         <a
-          href="/partners"
+          href={`${basePath}/partners/`}
           className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <h2 className={inter.className}>
             PARTNERS <span>-&gt;</span>
@@ -60,10 +55,8 @@ const Partners = () => {
         </a>
 
         <a
-          href="/roadmap"
+          href={`${basePath}/roadmap/`}
           className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <h2 className={inter.className}>
             ROADMAP <span>-&gt;</span>

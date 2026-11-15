@@ -1,10 +1,11 @@
+import { basePath } from '@/lib/basePath';
 import React from 'react';
 import Image from 'next/image';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import styles from '../app/page.module.css'
 import core_styles from '../styles/pages/core.module.css'
-import { Inter } from '@next/font/google'
+import { Inter } from 'next/font/google'
 import '../app/globals.css'
 import Head from 'next/head';
 const inter = Inter({ subsets: ['latin'] })
@@ -16,7 +17,7 @@ const Core = () =>{
         <title>Core ➤ x-edeum</title>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta name="description" content="Motivated people together." />
-        <link rel="icon" href="/logo_vector-file.svg" />
+        <link rel="icon" href={`${basePath}/logo_vector-file.svg`} />
       </Head>
       <div className={styles.description}>
         <p>
@@ -24,9 +25,7 @@ const Core = () =>{
         </p>
         <div>
           <a
-            href="/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`${basePath}/`}
           >
            Learn, create and innovate with us.
           </a>
@@ -39,7 +38,7 @@ const Core = () =>{
        >
         <div className={core_styles.swipItem}>
           <div className={core_styles.imgBox}>
-            <Image src={`/imgs/xyndor.jpg`} alt="Slide 1"  width={584} height={712} />
+            <Image src={`${basePath}/imgs/xyndor.jpg`} alt="Slide 1"  width={584} height={712} />
           </div>
           <div className={core_styles.detail}>
               <h2>Xshann, the Powerhouse Pathfinder</h2>
@@ -48,7 +47,7 @@ const Core = () =>{
         </div>
         <div className={core_styles.swipItem}>
           <div className={core_styles.imgBox}>
-            <Image src={`/imgs/warlord_584x712.jpeg`} alt="Slide 1" width={584} height={712}/>
+            <Image src={`${basePath}/imgs/warlord_584x712.jpeg`} alt="Slide 1" width={584} height={712}/>
           </div>
           <div className={core_styles.detail}>
               <h2>Daos, the Techno Titan</h2>
@@ -57,7 +56,7 @@ const Core = () =>{
         </div>
         <div className={core_styles.swipItem}>
           <div className={core_styles.imgBox}>
-            <Image src={`/imgs/war_584x712.jpeg`} alt="Slide 1"  width={584} height={712} />
+            <Image src={`${basePath}/imgs/war_584x712.jpeg`} alt="Slide 1"  width={584} height={712} />
           </div>
           <div className={core_styles.detail}>
               <h2>Sun, the Design Dominator</h2>
@@ -65,7 +64,7 @@ const Core = () =>{
         </div>
         <div className={core_styles.swipItem}>
           <div className={core_styles.imgBox}>
-            <Image src={`/imgs/jedi_584x712.jpeg`} alt="Slide 1"  width={584} height={712} />
+            <Image src={`${basePath}/imgs/jedi_584x712.jpeg`} alt="Slide 1"  width={584} height={712} />
           </div>
           <div className={core_styles.detail}>
               <h2>Bogh, the Cyber Conqueror</h2>
@@ -78,10 +77,8 @@ const Core = () =>{
        <div className={styles.grid}>
 
         <a
-          href="/smrtmed"
+          href={`${basePath}/smartmed/`}
           className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <h2 className={inter.className}>
            SMART MED®  <span>-&gt;</span>
@@ -90,10 +87,8 @@ const Core = () =>{
         </a>
 
         <a
-          href="/team"
+          href={`${basePath}/team/`}
           className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <h2 className={inter.className}>
             PARTNERS <span>-&gt;</span>
@@ -104,10 +99,8 @@ const Core = () =>{
         </a>
 
         <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href={`${basePath}/roadmap/`}
           className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <h2 className={inter.className}>
             ROADMAP <span>-&gt;</span>
