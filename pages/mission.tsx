@@ -1,109 +1,54 @@
-import { basePath } from '@/lib/basePath';
-import React from 'react';
-import styles from '../app/page.module.css'
+import Layout, { PageHero } from '@/components/Layout';
+import Explore from '@/components/Explore';
+import { IconClock, IconHeart, IconShield } from '@/components/Icons';
 
-import { Inter } from 'next/font/google'
-import '../app/globals.css'
-import Head from 'next/head';
-const inter = Inter({ subsets: ['latin'] })
-const Mission = () => {
+const GOALS = [
+  {
+    icon: <IconHeart />,
+    title: 'Improve the patient experience and reduce waiting times',
+    text: 'Empower patients with a seamless, stress-free hospital experience. By reducing the time spent navigating the hospital, we create an environment that is supportive and welcoming, focused on comfort and satisfaction.',
+  },
+  {
+    icon: <IconClock />,
+    title: 'Increase hospital efficiency and reputation',
+    text: 'Hospitals that run smoothly deliver better outcomes. Real-time navigation assistance reduces wait times and streamlines every visit, so patients get the care they need as quickly and easily as possible.',
+  },
+  {
+    icon: <IconShield />,
+    title: 'Ensure trust and security in healthcare',
+    text: 'Every patient has the right to privacy, and personal data must be protected. Robust security measures build trust with patients and providers, and a more transparent healthcare system for all.',
+  },
+];
+
+export default function Mission() {
   return (
-    
-     <main className={styles.main}>
-      <Head>
-        <title>Mission ➤ x-edeum</title>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <meta name="description" content="Motivated people together." />
-        <link rel="icon" href={`${basePath}/logo_vector-file.svg`} />
-      </Head>
-      <div className={styles.description}>
-        <p>
-        XΞDΞUM Mission: Waiting is over, our technology streamlines healthcare for everyone. 
-        </p>
-        <div>
-          <a
-            href={`${basePath}/`}
-          >
-           Together we build a better future.
-          </a>
+    <Layout path="/mission/" title="Mission" description="The XΞDΞUM mission: waiting is over. Technology that streamlines healthcare for everyone.">
+      <PageHero
+        eyebrow="Our mission"
+        title={<>Waiting is over. <span className="grad">Care should be simple.</span></>}
+        lead="Our technology streamlines healthcare for everyone. Here is the passion and purpose that drives us, and our commitment to simplifying your health journey."
+      />
+      <section className="section section--tight">
+        <div className="container">
+          <div className="grid grid--3">
+            {GOALS.map((g, i) => (
+              <article key={g.title} className="card card--tall">
+                <div className="card__icon">{g.icon}</div>
+                <span className="card__kicker">Goal {i + 1}</span>
+                <h3>{g.title}</h3>
+                <p>{g.text}</p>
+              </article>
+            ))}
+          </div>
         </div>
-      </div>
- 
-    {/* <div className={styles.center}>
-    </div> */}
-
- <div className={styles.grid}>
-
-        <div
-          className={styles.card}
-        >
-          <h2 className={inter.className}>
-           Improve Patient Experience Reduce Waitings Times<span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Empower patients by providing them with a seamless and stress-free hospital experience. By reducing the time patients spend navigating the hospital, we aim to create an environment that is supportive and welcoming, with a focus on patient comfort and satisfaction.</p>
+      </section>
+      <section className="section section--alt">
+        <div className="container quote">
+          <p>&ldquo;Together we build a better future, one where nobody gets lost on the way to care.&rdquo;</p>
+          <span>The XΞDΞUM team</span>
         </div>
-
-        <div
-          className={styles.card}
-        >
-          <h2 className={inter.className}>
-           Increase hospital Reputation and Efficiency<span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-          Revolutionize the healthcare industry by improving hospital efficiency and patient outcomes. Our goal is to create a world where hospitals run smoothly and efficiently, with patients receiving the care they need as quickly and easily as possible. By providing real-time navigation assistance, we aim to reduce wait times and streamline the hospital experience.</p>
-        </div>
-
-        <div
-          className={styles.card}
-        >
-          <h2 className={inter.className}>
-            Ensuring Trust and Security in Healthcare<span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-           To build a more secure and trustworthy healthcare ecosystem. We believe that every patient has the right to privacy and that their personal data must be protected. By implementing robust data security measures, we aim to build trust with patients and healthcare providers, and create a more secure and transparent healthcare system for all.
-          </p>
-        </div>
-      </div>
-
-       <div className={styles.grid}>
-
-        <a
-          href={`${basePath}/mission/`}
-          className={styles.card}
-        >
-          <h2 className={inter.className}>
-           MISSION  <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Discover the passion and purpose that drives us, and know that you&rsquo;re in good hands with our commitment to simplify your health journey.</p>
-        </a>
-
-        <a
-          href={`${basePath}/partners/`}
-          className={styles.card}
-        >
-          <h2 className={inter.className}>
-            PARTNERS <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Get to know the compassionate and dedicated team behind, and feel confident in the care you&rsquo;ll receive.
-          </p>
-        </a>
-
-        <a
-          href={`${basePath}/roadmap/`}
-          className={styles.card}
-        >
-          <h2 className={inter.className}>
-            ROADMAP <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            See how we plan to revolutionize the way you manage your health, and be inspired by our clear vision for the future.
-          </p>
-        </a>
-      </div>
- 
-     </main>
+      </section>
+      <Explore exclude="/mission/" />
+    </Layout>
   );
 }
-
-export default Mission;
